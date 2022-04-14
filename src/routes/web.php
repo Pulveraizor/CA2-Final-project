@@ -45,8 +45,6 @@ Route::post('/message', [ContactController::class, 'message'])->name('message');
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-// Route::get('/signin', [UserController::class, 'signIn'])->name('signIn');
-// Route::post('/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
 
 

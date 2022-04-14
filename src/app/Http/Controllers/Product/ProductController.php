@@ -19,17 +19,14 @@ class ProductController extends Controller
         if ($request->has('brand_id')) {
             $products->orWhere('brand_id', $request->brand_id);
         }
-        if ($request->has('search') && is_string($request->search)) {
-            $products->where('brand_id', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('model', 'LIKE', '%' . $request->search . '%');
-        }
+    
 
         if ($request->order_by == 'price') {
             $products->orderBy('price');
         } elseif ($request->order_by == 'newest') {
             $products->orderBy('created_at');
         } elseif ($request->order_by == 'type') {
-            $products->orderBy('type');
+            $products->orderBy('type_id');
         }
 
 

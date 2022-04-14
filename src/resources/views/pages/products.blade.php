@@ -11,12 +11,6 @@
             <form action="{{ route('products') }}" method="GET">
                 <div class="col mt-2">
 
-                    <div class="input-group input-group mb-3">
-                        <span class="input-group-text" for="search">Search</span>
-                        <input type="text" class="form-control" id="search" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm" name="search">
-                    </div>
-
                     <div class="type p-2 mb-2">
                         <div class="heading d-flex justify-content-between align-items-center">
                             <h6 class="text-uppercase">Category</h6>
