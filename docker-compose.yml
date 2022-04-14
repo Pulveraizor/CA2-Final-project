@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+    nginx:
+        build: ./nginx/
+        container_name: codeacademy-final-nginx
+        working_dir: /home/final
+        ports:
+            - 8087:80
+        volumes:
+            - ./:/home/final
+            - ./nginx/logs:/var/log/nginx
+    php:
+        build: ./php/
+        container_name: codeacademy-final-php
+        working_dir: /home/final/src
+        volumes: 
+            - ./:/home/final
+            - ./php/logs:/var/log/php-fpm
+        env_file:
+            - ./src/.env
+    db:
+        container_name: codeacademy-final-db
+        image: mariadb:10.6.5
+        env_file:
+            - ./mysql/.env
+        volumes:
+            - ./mysql/data:/var/lib/mysql
+        ports:
+            - 3306:3306
